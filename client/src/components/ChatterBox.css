@@ -1,0 +1,36 @@
+.chat {
+  padding: 5px;
+  margin-bottom: 5px;
+  background-color: #87cefa;
+  font-size: 20px;
+  font-family: "VCR-OSD-Mono";
+  border-radius: 10px;
+}
+
+.chat .username {
+  font-weight: 800;
+}
+
+.chat:hover {
+  background-color: #0090da;
+}
+
+@media (max-width: 1023px) {
+  .chat {
+    background-color: #eee;
+    font-size: 18px;
+  }
+  .chat:hover {
+    background-color: #c0c0c0;
+  }
+}
+
+@media (max-width: 767px) {
+  .chat {
+    background-color: #ffc0cb;
+    font-size: 15px;
+  }
+  .chat:hover {
+    background-color: #ff69b4;
+  }
+}

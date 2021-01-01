@@ -1,0 +1,200 @@
+body {
+  padding: 0;
+  margin: 0;
+  font-family: "In your face, joffrey!";
+}
+
+input,
+button {
+  font-family: "VCR-OSD-Mono";
+  font-weight: 900;
+  font-size: 40%;
+  text-align: center;
+  margin-left: 25px;
+}
+
+.app__title {
+  font-size: 200px;
+  color: black;
+  display: flex;
+  justify-content: center;
+}
+
+.menu__contents {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  /* border: 2px solid black; */
+}
+.menu__content {
+  text-align: center;
+  font-size: 40px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  height: 650px;
+  /* border: 2px solid black; */
+  flex: 0.8;
+}
+
+.main__profile,
+.signup__signin {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.menu__items {
+  padding-top: 20px;
+}
+.menu__item {
+  font-size: 80px;
+  border-radius: 10px;
+  width: 200px;
+  height: 70px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 10px;
+  margin: 5px 10px;
+  box-shadow: 0px 5px 17px -7px rgba(0, 0, 0, 0.75);
+  transition: transform 100ms ease-in;
+  cursor: pointer;
+}
+
+.menu__item:hover {
+  transform: scale(1.07);
+}
+
+.menu__item > a {
+  text-decoration: none;
+  /* color: #f21916; */
+}
+@media (min-width: 1024px) {
+  body {
+    background-color: #1e90ff;
+    /* background-repeat: no-repeat; */
+    /* background-image: url("https://media.tenor.com/images/20bd9fafb7339f2bd210dfb617fd4a87/tenor.gif"); */
+  }
+  .menu__item {
+    background-color: black;
+  }
+}
+@media (max-width: 1023px) {
+  body {
+    background-color: #999999;
+  }
+  .app__title {
+    font-size: 200px;
+    display: flex;
+    justify-content: center;
+  }
+  .menu__contents {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  .menu__content {
+    text-align: center;
+    font-size: 40px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    height: 650px;
+    /* border: 2px solid black; */
+    flex: 0.8;
+  }
+
+  .menu__items {
+    display: flex;
+    justify-content: center;
+    padding-top: 50px;
+  }
+  .menu__item {
+    font-size: 60px;
+    width: 150px;
+    height: 50px;
+    padding: 10px;
+    background-color: black;
+    /* border: 2px solid black; */
+    border-radius: 10px;
+    margin: 5px 15px;
+    flex: 1;
+    justify-content: center;
+    text-align: center;
+    box-shadow: 0px 5px 17px -7px rgba(0, 0, 0, 0.75);
+    transition: transform 100ms ease-in;
+    cursor: pointer;
+  }
+  .menu__item:hover {
+    transform: scale(1.07);
+  }
+}
+
+@media (max-width: 767px) {
+  body {
+    background-color: red;
+  }
+  .app__title {
+    font-size: 150px;
+    display: flex;
+    justify-content: center;
+  }
+  .menu__contents {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  .menu__content {
+    text-align: center;
+    font-size: 40px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    height: 650px;
+    /* border: 2px solid black; */
+    /* border-radius: 10px; */
+    flex: 0.8;
+  }
+  .menu__items {
+    display: block;
+    margin-top: 5px;
+    padding-top: 30px;
+  }
+  .menu__item {
+    font-size: 50px;
+    padding: 10px;
+    /* border: 2px solid black; */
+    background-color: black;
+    border-radius: 10px;
+    margin: 5px 10px;
+    flex: 0.4;
+    justify-content: center;
+    text-align: center;
+    box-shadow: 0px 5px 17px -7px rgba(0, 0, 0, 0.75);
+    transition: transform 100ms ease-in;
+    cursor: pointer;
+  }
+  .menu__item:hover {
+    transform: scale(1.07);
+  }
+}
+
+@font-face {
+  font-family: "VCR-OSD-Mono";
+  src: url("./fonts/VCR-OSD-Mono.ttf.woff") format("woff"),
+    url("./fonts/VCR-OSD-Mono.ttf.svg#VCR-OSD-Mono") format("svg"),
+    url("./fonts/VCR-OSD-Mono.ttf.eot"),
+    url("./fonts/VCR-OSD-Mono.ttf.eot?#iefix") format("embedded-opentype");
+  font-weight: normal;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: "In your face, joffrey!";
+  font-style: normal;
+  font-weight: normal;
+  src: url("./fonts/inyourface.woff") format("woff");
+}
