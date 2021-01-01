@@ -3,6 +3,8 @@ import AppLayout from "../../src/components/AppLayout";
 import ChatterBox from "../components/ChatterBox";
 import "./Home.css";
 
+import { Link } from "react-router-dom";
+
 class Home extends Component {
   constructor() {
     super();
@@ -113,7 +115,13 @@ class Home extends Component {
       <AppLayout>
         <div className="chats__list">
           <div className="main">
-            <h1>ChatterBox🍎</h1>
+            <h1>Comment Below🐼</h1>
+            <div className="goToRealChat">
+              <div>For Real-Time CHAT ⏩</div>
+              <Link to="/" className="clickMe">
+                Click Me
+              </Link>
+            </div>
             <div className="input-group">
               <div className="select-input">
                 <label htmlFor="text">Room Type ⏩</label>
