@@ -11,10 +11,10 @@
 ## 🎇Process
 
 <strong>2020.12.26</strong>
-![](.client/public/images/comongus_chatterbox_small.jpeg)
+![](./client/public/images/comongus_chatterbox_small.jpeg)
 
 <strong>2020.12.27</strong>
-![](.client/public/images/comong_201227_01.jpeg)
+![](./client/public/images/comong_201227_01.jpeg)
 
 <strong>2020.12.31</strong>
-![](.client/public/images/comong_201231_01.jpeg)
+![](./client/public/images/comong_201231_01.jpeg)
