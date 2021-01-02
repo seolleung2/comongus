@@ -4,9 +4,9 @@ import "./RealTimeChat.css";
 
 const RealTimeChat = () => {
   return (
-    <body className="RealTimeChatBody">
-      <div>hello world</div>
-    </body>
+    <div className="RealTimeChatBody">
+      <h1>Chat</h1>
+    </div>
   );
 };
 

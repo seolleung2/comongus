@@ -1,20 +1,23 @@
 import React from "react";
 // import "./App.css";
-import { Route } from "react-router-dom";
+import { BrowserRouter as Router, Route } from "react-router-dom";
 import Home from "./routes/Home";
 import Profile from "./routes/Profile";
 import Signin from "./routes/Signin";
 import Signup from "./routes/Signup";
-import RealTimeChat from "./routes/RealTimeChat";
-
+import RealTimeChatJoin from "./components/RealTimeChatJoin/RealTimeChatJoin";
+import RealTimeChat from "./components/RealTimeChat/RealTimeChat";
 function App() {
   return (
     <>
-      <Route path="/" component={Home} exact={true} />
-      <Route path="/profile" component={Profile} />
-      <Route path="/signin" component={Signin} />
-      <Route path="/signup" component={Signup} />
-      <Route path="/realtimechat" component={RealTimeChat} />
+      <Router>
+        <Route path="/" component={Home} exact={true} />
+        <Route path="/profile" component={Profile} />
+        <Route path="/signin" component={Signin} />
+        <Route path="/signup" component={Signup} />
+        <Route path="/rtcjoin" component={RealTimeChatJoin} exact={true} />
+        <Route path="/rtcjoin/chat" component={RealTimeChat} />
+      </Router>
     </>
   );
 }

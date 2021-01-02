@@ -119,7 +119,7 @@ class Home extends Component {
               <h1>Comment Below🐼</h1>
               <div className="goToRealChat">
                 <div className="titleForRealChat">For Real-Time CHAT ❤️</div>
-                <Link to="/realtimechat" className="clickMe"></Link>
+                <Link to="/rtcjoin" className="clickMe"></Link>
               </div>
               <div className="input-group">
                 <div className="select-input">
