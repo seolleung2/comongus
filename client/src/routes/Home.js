@@ -24,9 +24,16 @@ class Home extends Component {
   componentDidMount() {
     // this.getData(); // 1. 기존 방법
     // window.setTimeout(window.location.reload(), 60000) // 2. window 창 자체를 새로고침 (매우 무식스)
-    setInterval(() => {
-      this.getData(); // 3. 위에 this.getData = this.getData.bind(this) 를 안적어서 이래 표기하니 되었다.
+    // setInterval(() => {
+    //   this.getData();
+    // }, 1000);
+    this._intervalID = setInterval(() => {
+      this.getData();
     }, 1000);
+  }
+
+  componentWillUnmount() {
+    clearInterval(this._intervalID);
   }
   handleChange = (event) => {
     this.setState({
