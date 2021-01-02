@@ -5,9 +5,12 @@ import FaceOutlinedIcon from "@material-ui/icons/FaceOutlined";
 import AndroidOutlinedIcon from "@material-ui/icons/AndroidOutlined";
 import SportsEsportsOutlinedIcon from "@material-ui/icons/SportsEsportsOutlined";
 
+import "./AppLayout.css";
+
 const AppLayout = ({ children }) => {
   return (
     <>
+      <div className="app__title">COMONG US</div>
       <div className="menu__contents">
         <div className="menu__content">{children}</div>
       </div>

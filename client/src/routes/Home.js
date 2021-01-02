@@ -112,72 +112,74 @@ class Home extends Component {
   render() {
     const { chatsList, roomList } = this.state;
     return (
-      <AppLayout>
-        <div className="chats__list">
-          <div className="main">
-            <h1>Comment Below🐼</h1>
-            <div className="goToRealChat">
-              <div className="titleForRealChat">For Real-Time CHAT ❤️</div>
-              <Link to="/" className="clickMe"></Link>
-            </div>
-            <div className="input-group">
-              <div className="select-input">
-                <label htmlFor="text">Room Type ⏩</label>
-                <select
-                  name="roomName"
-                  id="roomName"
-                  onChange={this.handleChangeRoom}
-                >
-                  <option value="none">===Select Room===</option>
-                  <option value="typeRoomName">Type RoomName ⏩</option>
+      <>
+        <AppLayout>
+          <div className="chats__list">
+            <div className="main">
+              <h1>Comment Below🐼</h1>
+              <div className="goToRealChat">
+                <div className="titleForRealChat">For Real-Time CHAT ❤️</div>
+                <Link to="/realtimechat" className="clickMe"></Link>
+              </div>
+              <div className="input-group">
+                <div className="select-input">
+                  <label htmlFor="text">Room Type ⏩</label>
+                  <select
+                    name="roomName"
+                    id="roomName"
+                    onChange={this.handleChangeRoom}
+                  >
+                    <option value="none">===Select Room===</option>
+                    <option value="typeRoomName">Type RoomName ⏩</option>
 
-                  {roomList.map((room, idx) => {
-                    return (
-                      <option key={idx} value={room}>
-                        {room}
-                      </option>
-                    );
-                  })}
-                </select>
-                <input
-                  type="text"
-                  id="typeRoomName"
-                  style={{ display: "none" }}
-                  onChange={this.handleChangeRoom}
-                  placeholder="Input Your Roomname"
-                />
-              </div>
-              <div className="textarea-btn">
-                <textarea
-                  id="comment"
-                  onChange={this.handleChange}
-                  name="comment"
-                  rows="2"
-                  cols="33"
-                  onKeyDown={this.handleKeyDown}
-                  placeholder="Your Comment"
-                ></textarea>
-                <button id="submit" onClick={this.handleSubmit}>
-                  Submit
-                </button>
+                    {roomList.map((room, idx) => {
+                      return (
+                        <option key={idx} value={room}>
+                          {room}
+                        </option>
+                      );
+                    })}
+                  </select>
+                  <input
+                    type="text"
+                    id="typeRoomName"
+                    style={{ display: "none" }}
+                    onChange={this.handleChangeRoom}
+                    placeholder="Input Your Roomname"
+                  />
+                </div>
+                <div className="textarea-btn">
+                  <textarea
+                    id="comment"
+                    onChange={this.handleChange}
+                    name="comment"
+                    rows="2"
+                    cols="33"
+                    onKeyDown={this.handleKeyDown}
+                    placeholder="Your Comment"
+                  ></textarea>
+                  <button id="submit" onClick={this.handleSubmit}>
+                    Submit
+                  </button>
+                </div>
               </div>
             </div>
+            <div className="chats">
+              {chatsList.map((chat, idx) => {
+                return (
+                  <ChatterBox
+                    key={idx}
+                    username={chat.username}
+                    roomname={chat.roomname}
+                    date={chat.date}
+                    text={chat.text}
+                  />
+                );
+              })}
+            </div>
           </div>
-          <div className="chats">
-            {chatsList.map((chat, idx) => {
-              return (
-                <ChatterBox
-                  key={idx}
-                  username={chat.username}
-                  roomname={chat.roomname}
-                  date={chat.date}
-                  text={chat.text}
-                />
-              );
-            })}
-          </div>
-        </div>
-      </AppLayout>
+        </AppLayout>
+      </>
     );
   }
 }
