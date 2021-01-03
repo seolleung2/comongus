@@ -15,7 +15,7 @@ const addUser = ({ id, name, room }) => {
     (user) => user.room === room && user.name === name
   );
 
-  if (existingUsers) {
+  if (existingUser) {
     return { error: "Same Username exists" };
   }
 
