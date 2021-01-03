@@ -5,6 +5,8 @@ import io from "socket.io-client";
 import "./RealTimeChat.css";
 import InfoBar from "../InfoBar/InfoBar";
 import Input from "../Input/Input";
+import Messages from "../Messages/Messages";
+import TextContainer from "../TextContainer/TextContainer";
 
 let socket;
 
@@ -22,6 +24,7 @@ const RealTimeChat = ({ location }) => {
 
   const [name, setName] = useState("");
   const [room, setRoom] = useState("");
+  const [users, setUsers] = useState("");
   const [message, setMessage] = useState("");
   const [messages, setMessages] = useState([]);
 
@@ -42,18 +45,25 @@ const RealTimeChat = ({ location }) => {
     // console.log(socket);
 
     // 클라이언트가 서버로 이벤트를 전달 할때 쓰는 emit
-    socket.emit("join", { name, room }, () => {}); // socket.emit("join", { name : name, room: room }); 이렇게 작성해도 됨, emit 의 두번째 인자는 backend 에 보내는 payload.
+    socket.emit("join", { name, room }, (error) => {
+      if (error) {
+        alert(error);
+      }
+    }); // socket.emit("join", { name : name, room: room }); 이렇게 작성해도 됨, emit 의 두번째 인자는 backend 에 보내는 payload.
 
-    return () => {
-      socket.emit("disconnect"); // a return statement this is used for unmounting, disconnecting effects
-      // ! 서버 사이드에서 연결을 끊을 때 이벤트 'disconnect' 를 고대로 실행시킨다.
-      socket.off(); // turn this socket request off
-    };
+    // return () => {
+    //   socket.emit("disconnect"); // a return statement this is used for unmounting, disconnecting effects
+    //   // ! 서버 사이드에서 연결을 끊을 때 이벤트 'disconnect' 를 고대로 실행시킨다.
+    //   socket.off(); // turn this socket request off
+    // };
   }, [ENDPOINT, location.search]); // ! if present, effect will only activate if the values in the list change.
 
   useEffect(() => {
     socket.on("message", (message) => {
       setMessages([...messages, message]);
+    });
+    socket.on("roomData", ({ users }) => {
+      setUsers(users);
     });
   }, [messages]);
 
@@ -72,6 +82,7 @@ const RealTimeChat = ({ location }) => {
     <div className="outerContainer">
       <div className="container">
         <InfoBar room={room} />
+        <Messages messages={messages} name={name} />
         <Input
           message={message}
           setMessage={setMessage}
@@ -85,6 +96,7 @@ const RealTimeChat = ({ location }) => {
           }
         /> */}
       </div>
+      <TextContainer users={users} />
     </div>
   );
 };
