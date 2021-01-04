@@ -1,6 +1,6 @@
 # 🌈Getting Started with ComongUS🎉
 
-![](./public/images/comongus_main.jpeg)
+![](./client/public/images/comongus_main.jpeg)
 
 ## Achievement Goals
 
