@@ -18,3 +18,6 @@
 
 <strong>2020.12.31</strong>
 ![](./client/public/images/comong_201231_01.jpeg)
+
+<strong>2021.01.05</strong>
+![](./client/public/images/comong_210105.jpeg)
