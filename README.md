@@ -19,5 +19,5 @@
 <strong>2020.12.31</strong>
 ![](./client/public/images/comong_201231_01.jpeg)
 
-<strong>2021.01.05</strong>
+<strong>2021.01.05, Socket.io 를 적용한 Real-Time CHAT 구현</strong>
 ![](./client/public/images/comong_210105.jpeg)
