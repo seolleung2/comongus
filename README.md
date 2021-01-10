@@ -21,3 +21,6 @@
 
 <strong>2021.01.05, Socket.io 를 적용한 Real-Time CHAT 구현</strong>
 ![](./client/public/images/comong_210105.jpeg)
+
+<strong>2021.01.10, 난생처음 투두앱 만들기🐧 SCSS 를 적용해 보았다.👍👍👍</strong>
+![](./client/public/images/comong_210110.jpeg)
