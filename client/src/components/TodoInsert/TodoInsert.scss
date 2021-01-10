@@ -1,4 +1,5 @@
 .TodoInsert {
+  @import url('https://fonts.googleapis.com/css2?family=Nanum+Pen+Script&display=swap');
   display: flex;
   background: #003467;
 
@@ -9,12 +10,36 @@
     border: none;
     padding: 1rem;
     font-size: 2rem;
+    font-family: 'Nanum Pen Script', cursive;
     text-align: start;
     line-height: 1.5;
     color: white;
+    width: 100%;
     &::placeholder {
       color: #eff2f5;
     }
     flex: 1;
+  }
+  button {
+    background: none;
+    outline: none;
+    border: none;
+    background: #636363;
+    color: white;
+    padding-left: 1.5rem;
+    padding-right: 1.5rem;
+    font-size: 3rem;
+    display: flex;
+    align-items: center;
+    cursor: pointer;
+    transition: 0.1s background ease-in;
+    &:hover {
+      background: #4a4a4a;
+    }
+  }
+  @media (max-width: 767px) {
+    input {
+      font-size: 1.4rem;
+    }
   }
 }

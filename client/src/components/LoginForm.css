@@ -10,7 +10,7 @@
   .portrait {
     width: 100%;
     height: 100%;
-    background-image: url("https://i.ytimg.com/vi/jr6RxPLlJrs/maxresdefault.jpg");
+    background-image: url('https://i.ytimg.com/vi/jr6RxPLlJrs/maxresdefault.jpg');
     /* background-position: center center; */
     background-repeat: no-repeat;
     background-size: cover;
@@ -21,7 +21,7 @@
   .hiddenPortrait {
     width: 100%;
     height: 60%;
-    background-image: url("https://s3.amazonaws.com/media.thecrimson.com/photos/2020/11/06/010534_1346719.gif");
+    background-image: url('https://s3.amazonaws.com/media.thecrimson.com/photos/2020/11/06/010534_1346719.gif');
     background-position: center center;
     background-repeat: no-repeat;
     background-size: cover;
@@ -54,14 +54,14 @@
   .portrait {
     width: 100%;
     height: 470px;
-    background-image: url("https://wallpapercave.com/wp/wp7445982.jpg");
+    background-image: url('https://wallpapercave.com/wp/wp7445982.jpg');
     background-repeat: no-repeat;
     background-size: cover;
     border-radius: 10px;
     cursor: pointer;
   }
   .portrait:hover {
-    background-image: url("https://i.pinimg.com/originals/0f/94/10/0f94108094f6a9cfc64ddf60c32dc1c6.gif");
+    background-image: url('https://i.pinimg.com/originals/0f/94/10/0f94108094f6a9cfc64ddf60c32dc1c6.gif');
     /* background-repeat: no-repeat;
       background-size: cover; */
   }
@@ -99,14 +99,14 @@
   .portrait {
     width: 100%;
     height: 470px;
-    background-image: url("https://i.redd.it/w0lmb8i7odo51.png");
+    background-image: url('https://i.redd.it/w0lmb8i7odo51.png');
     background-repeat: no-repeat;
     background-size: cover;
     border-radius: 10px;
   }
   .portrait:hover {
     margin: 0px auto;
-    background-image: url("https://64.media.tumblr.com/7898d087981456a594c2313bbd7b93f3/087d23613b467308-c4/s500x750/2293a6c0d494ffa213a709eab0856304732cc1a7.gifv");
+    background-image: url('https://64.media.tumblr.com/7898d087981456a594c2313bbd7b93f3/087d23613b467308-c4/s500x750/2293a6c0d494ffa213a709eab0856304732cc1a7.gifv');
     background-position: center center;
   }
 
@@ -139,4 +139,5 @@
 .login__btn {
   width: 100px;
   height: 40px;
+  font-size: 20px;
 }

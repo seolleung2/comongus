@@ -4,7 +4,7 @@ import './TodoTemplate.scss';
 const TodoTemplate = ({ children }) => {
   return (
     <div className="TodoTemplate">
-      <div className="app-title">What's the plan for today?</div>
+      <div className="app-title">🍊To-Do App🍊</div>
       <div className="content">{children}</div>
     </div>
   );

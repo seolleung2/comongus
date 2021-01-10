@@ -23,7 +23,7 @@ const TodoInsert = ({ handleInsert }) => {
       <input
         value={inputVal}
         onChange={handleChange}
-        placeholder="Type Your Plan A For Today 💖"
+        placeholder="오늘의 할일을 기록해요, 미래의 개발자님🍊"
       />
       <button type="submit">
         <GiStarStruck />
