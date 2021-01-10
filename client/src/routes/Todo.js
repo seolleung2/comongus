@@ -44,12 +44,27 @@ const Todo = () => {
     [todos],
   );
 
+  const handleToggle = useCallback(
+    (id) => {
+      setTodos(
+        todos.map((todo) =>
+          todo.id === id ? { ...todo, checked: !todo.checked } : todo,
+        ),
+      );
+    },
+    [todos],
+  );
+
   return (
     <>
       <AppLayout>
         <TodoTemplate>
           <TodoInsert handleInsert={handleInsert} />
-          <TodoList todos={todos} handleRemove={handleRemove} />
+          <TodoList
+            todos={todos}
+            handleRemove={handleRemove}
+            handleToggle={handleToggle}
+          />
         </TodoTemplate>
       </AppLayout>
     </>
