@@ -37,12 +37,19 @@ const Todo = () => {
     [todos],
   );
 
+  const handleRemove = useCallback(
+    (id) => {
+      setTodos(todos.filter((todo) => todo.id !== id));
+    },
+    [todos],
+  );
+
   return (
     <>
       <AppLayout>
         <TodoTemplate>
           <TodoInsert handleInsert={handleInsert} />
-          <TodoList todos={todos} />
+          <TodoList todos={todos} handleRemove={handleRemove} />
         </TodoTemplate>
       </AppLayout>
     </>
