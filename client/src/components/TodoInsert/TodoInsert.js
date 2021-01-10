@@ -5,7 +5,7 @@ import './TodoInsert.scss';
 const TodoInsert = () => {
   return (
     <form className="TodoInsert">
-      <input placeholder="Your plan for today" />
+      <input placeholder="Type Your Plan A For Today 💖" />
       <button type="submit">
         <GiStarStruck />
       </button>
