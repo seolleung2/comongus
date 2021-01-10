@@ -7,12 +7,15 @@ import {
 } from 'react-icons/md';
 import './TodoListItem.scss';
 
-const TodoListItem = () => {
+import cn from 'classnames';
+// !classnames 를 사용한 방식은 새삼 신박하다.
+const TodoListItem = ({ todo }) => {
+  const { text, checked } = todo;
   return (
     <div className="TodoListItem">
-      <div className="checkbox">
-        <MdCheckBoxOutlineBlank />
-        <div className="text">To-do</div>
+      <div className={cn('checkbox', { checked })}>
+        {checked ? <MdCheckBox /> : <MdCheckBoxOutlineBlank />}
+        <div className="text">{text}</div>
       </div>
       <div className="remove">
         <MdRemoveCircleOutline />
