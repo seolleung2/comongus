@@ -2,6 +2,7 @@ import React, { useState, useCallback } from 'react';
 import { GiStarStruck } from 'react-icons/gi';
 import './TodoInsert.scss';
 
+// ! 뭔가 여기서 server 에 post 처리를 해줘야 할 것 같다.
 const TodoInsert = ({ handleInsert }) => {
   const [inputVal, setInputVal] = useState('');
 
