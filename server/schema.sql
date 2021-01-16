@@ -5,6 +5,6 @@ USE comongus;
 CREATE TABLE `todolist` (
   `id` int PRIMARY KEY AUTO_INCREMENT,
   `username` varchar(255),
-  `text` varchar(1000),
-  `created_at` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP,
+  `text` varchar(1000) NOT NULL,
+  `created_at` datetime NOT NULL DEFAULT (now())
 );
