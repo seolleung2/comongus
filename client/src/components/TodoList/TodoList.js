@@ -3,9 +3,8 @@ import TodoListItem from '../TodoListItem/TodoListItem';
 import './TodoList.scss';
 
 import { connect } from 'react-redux';
-import { actionCreators } from '../../store';
 
-const TodoList = ({ toDos, handleRemove, handleToggle }) => {
+const TodoList = ({ toDos }) => {
   return (
     <div className="TodoList">
       {toDos.map((toDo) => (
