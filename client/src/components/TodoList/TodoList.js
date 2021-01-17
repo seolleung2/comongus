@@ -2,19 +2,21 @@ import React from 'react';
 import TodoListItem from '../TodoListItem/TodoListItem';
 import './TodoList.scss';
 
-const TodoList = ({ todos, handleRemove, handleToggle }) => {
+import { connect } from 'react-redux';
+import { actionCreators } from '../../store';
+
+const TodoList = ({ toDos, handleRemove, handleToggle }) => {
   return (
     <div className="TodoList">
-      {todos.map((todo) => (
-        <TodoListItem
-          key={todo.id}
-          todo={todo}
-          handleRemove={handleRemove}
-          handleToggle={handleToggle}
-        />
+      {toDos.map((toDo) => (
+        <TodoListItem {...toDo} key={toDo.id} />
       ))}
     </div>
   );
 };
 
-export default TodoList;
+const mapStateToProps = (state, ownProps) => {
+  return { toDos: state };
+};
+
+export default connect(mapStateToProps)(TodoList);

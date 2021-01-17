@@ -3,6 +3,7 @@ import { GiStarStruck } from 'react-icons/gi';
 import './TodoInsert.scss';
 
 import { connect } from 'react-redux';
+import { actionCreators } from '../../store';
 
 // ! 뭔가 여기서 server 에 post 처리를 해줘야 할 것 같다.
 const TodoInsert = (props) => {
@@ -14,15 +15,13 @@ const TodoInsert = (props) => {
     setInputVal(e.target.value);
   }, []);
 
-  const handleSubmit = useCallback(
-    (e) => {
-      // handleInsert(inputVal); // props 로 불러온 handleInsert 실행.
-      setInputVal(''); // input value 값 초기화
+  const handleSubmit = (event) => {
+    event.preventDefault();
 
-      e.preventDefault();
-    },
-    [inputVal],
-  );
+    props.addToDo(inputVal);
+
+    setInputVal('');
+  };
   return (
     <form className="TodoInsert" onSubmit={handleSubmit}>
       <input
@@ -41,6 +40,12 @@ const mapStateToProps = (state, ownProps) => {
   return { toDos: state };
 };
 
-export default connect(mapStateToProps)(TodoInsert);
+const mapDispatchToProps = (dispatch, ownProps) => {
+  return {
+    addToDo: (inputVal) => dispatch(actionCreators.addToDo(inputVal)),
+  };
+};
+
+export default connect(mapStateToProps, mapDispatchToProps)(TodoInsert);
 
 // https://react-icons.github.io/react-icons/icons?name=md

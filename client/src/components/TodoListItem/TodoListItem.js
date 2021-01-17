@@ -9,19 +9,15 @@ import './TodoListItem.scss';
 
 import cn from 'classnames';
 // !classnames 를 사용한 방식은 새삼 신박하다.
-const TodoListItem = ({ todo, handleRemove, handleToggle }) => {
-  const { id, text, checked } = todo;
+const TodoListItem = ({ id, text, checked }) => {
   return (
     <div className="TodoListItem">
-      <div
-        className={cn('checkbox', { checked })}
-        onClick={() => handleToggle(id)}
-      >
+      <div className={cn('checkbox', { checked })}>
         {checked ? <MdCheckBox /> : <MdCheckBoxOutlineBlank />}
         <div className="text">{text}</div>
       </div>
       <div className="remove">
-        <MdRemoveCircleOutline onClick={() => handleRemove(id)} />
+        <MdRemoveCircleOutline />
         <MdBorderColor />
       </div>
     </div>
