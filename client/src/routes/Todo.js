@@ -22,20 +22,20 @@ const Todo = () => {
     },
   ]);
   // Id 는 고유값으로 사용된다. useRef 를 사용해서 변수에 담았다.
-  const nextId = useRef(4);
+  // const nextId = useRef(4);
 
-  const handleInsert = useCallback(
-    (text) => {
-      const todo = {
-        id: nextId.current,
-        text,
-        checked: false,
-      };
-      setTodos(todos.concat(todo));
-      nextId.current += 1;
-    },
-    [todos],
-  );
+  // const handleInsert = useCallback(
+  //   (text) => {
+  //     const todo = {
+  //       id: nextId.current,
+  //       text,
+  //       checked: false,
+  //     };
+  //     setTodos(todos.concat(todo));
+  //     nextId.current += 1;
+  //   },
+  //   [todos],
+  // );
 
   const handleRemove = useCallback(
     (id) => {
@@ -59,7 +59,8 @@ const Todo = () => {
     <>
       <AppLayout>
         <TodoTemplate>
-          <TodoInsert handleInsert={handleInsert} />
+          {/* <TodoInsert handleInsert={handleInsert} /> */}
+          <TodoInsert />
           <TodoList
             todos={todos}
             handleRemove={handleRemove}

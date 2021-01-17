@@ -2,8 +2,12 @@ import React, { useState, useCallback } from 'react';
 import { GiStarStruck } from 'react-icons/gi';
 import './TodoInsert.scss';
 
+import { connect } from 'react-redux';
+
 // ! 뭔가 여기서 server 에 post 처리를 해줘야 할 것 같다.
-const TodoInsert = ({ handleInsert }) => {
+const TodoInsert = (props) => {
+  console.log(props);
+
   const [inputVal, setInputVal] = useState('');
 
   const handleChange = useCallback((e) => {
@@ -12,12 +16,12 @@ const TodoInsert = ({ handleInsert }) => {
 
   const handleSubmit = useCallback(
     (e) => {
-      handleInsert(inputVal); // props 로 불러온 handleInsert 실행.
+      // handleInsert(inputVal); // props 로 불러온 handleInsert 실행.
       setInputVal(''); // input value 값 초기화
 
       e.preventDefault();
     },
-    [handleInsert, inputVal],
+    [inputVal],
   );
   return (
     <form className="TodoInsert" onSubmit={handleSubmit}>
@@ -33,6 +37,10 @@ const TodoInsert = ({ handleInsert }) => {
   );
 };
 
-export default TodoInsert;
+const mapStateToProps = (state, ownProps) => {
+  return { toDos: state };
+};
+
+export default connect(mapStateToProps)(TodoInsert);
 
 // https://react-icons.github.io/react-icons/icons?name=md
