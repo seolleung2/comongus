@@ -23,7 +23,13 @@ module.exports = {
     },
   },
   todolist: {
-    get: function (req, res) {},
-    post: function (req, res) {},
+    get: function (req, res) {
+      models.todolist.get().then((data) => res.json(data));
+    },
+    post: function (req, res) {
+      console.log(req.body);
+      const value = [req.body.username, req.body.text];
+      models.todolist.post(value).then(() => res.status(201).send());
+    },
   },
 };
