@@ -13,15 +13,15 @@ import cn from 'classnames';
 import { connect } from 'react-redux';
 import { actionCreators } from '../../store';
 
-const TodoListItem = ({ id, text, checked, onBtnClick, onChecked }) => {
-  console.log(onChecked);
+const TodoListItem = ({ text, checked, onBtnClick, onToggled }) => {
+  // console.log(onToggled);
   return (
     <div className="TodoListItem">
       <div className={cn('checkbox', { checked })}>
         {checked ? (
-          <MdCheckBox />
+          <MdCheckBox onClick={onToggled} />
         ) : (
-          <MdCheckBoxOutlineBlank onClick={onChecked} />
+          <MdCheckBoxOutlineBlank onClick={onToggled} />
         )}
         <div className="text">{text}</div>
       </div>
@@ -37,8 +37,8 @@ const mapDispatchToProps = (dispatch, ownProps) => {
   console.log(ownProps);
   return {
     onBtnClick: () => dispatch(actionCreators.deleteToDo(ownProps.id)),
-    onChecked: () =>
-      dispatch(actionCreators.isChecked(ownProps.id, ownProps.checked)),
+    onToggled: () =>
+      dispatch(actionCreators.toggle(ownProps.id, ownProps.checked)),
   };
 };
 
