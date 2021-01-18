@@ -4,8 +4,11 @@ const ADD = 'ADD';
 const DELETE = 'DELETE';
 const CHECK = 'CHECK';
 
+let idCounter = 0;
+
 const addToDo = (text) => {
   return {
+    id: idCounter++,
     type: ADD,
     text,
   };
@@ -29,7 +32,7 @@ const isChecked = (id, checked) => {
 const reducer = (state = [], action) => {
   switch (action.type) {
     case ADD:
-      return [...state, { id: Date.now(), text: action.text, checked: false }];
+      return [...state, { id: action.id, text: action.text, checked: false }];
     case DELETE:
       return state.filter((toDo) => toDo.id !== action.id);
     case CHECK:
